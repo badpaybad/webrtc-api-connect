@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <style>
+        .info {
+            border: 1px #ccc solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body onload="handlePageLoad()">
+    <audio id="player" autoplay></audio>
+    <div class="info">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <b>Thông tin máy lẻ:</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Username:
+                    </td>
+                    <td>
+                        <span id="extension-username"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Trạng thái:
+                    </td>
+                    <td>
+                        <span id="ua-status"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="info">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <b>Thông tin cuộc gọi:</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            ID:
+                        </td>
+                        <td>
+                            <span id="call-id"></span>
+                        </td>
+                    </tr>
+                <tr>
+                    <td>
+                        Loại cuộc gọi:
+                    </td>
+                    <td>
+                        <span id="call-type"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Số điện thoại
+                    </td>
+                    <td>
+                        <span id="call-phone"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Trạng thái:
+                    </td>
+                    <td>
+                        <span id="call-status"></span>(<span id="session-status"></span>)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Thời lượng:
+                    </td>
+                    <td>
+                        <span id="call-duration"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <input id="input-phone" type="text" name="phone" placeholder="Số điện thoại" value="" />
+                            <input id="button-call" type="button" value="Gọi" onclick="handleButtonCallClick()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="button-answer" type="button" value="Trả lời" onclick="handleButtonAnswerClick()" style="display:none"/>
+                        <input id="button-hangup" type="button" value="Kết thúc" onclick="handleButtonHangupClick()" style="display:none"/>
+                    </td>
+                </tr>
+                <tr>
+                        <td colspan="2">
+                            <input id="input-phone-transfer" type="text" name="phone" placeholder="Số điện thoại" value=""  style="display:none"/>
+                            <input id="button-transfer" type="button" value="Chuyển tiếp" onclick="handleButtonTransferClick()" style="display:none"/>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://sipjs.com/download/sip-0.15.1.min.js"></script>
+    <!-- <script src="https://sipjs.com/download/sip-0.7.0.min.js"></script>-->
+    <script src="ua.js"></script>
+</body>
+
+</html>
